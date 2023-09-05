@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "ced-dev-server",
+      "script": "./server.js",
+      "instances": "max",
+      "exec_mode": "cluster",
+      "instance_var": "INSTANCE_ID",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "3002"
+      }
+    }
+  
+  ]
+}
