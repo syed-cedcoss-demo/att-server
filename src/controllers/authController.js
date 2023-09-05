@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
     const otp = await genFourDigitOTP();
     payload = { ...payload, password: hashPass, otp };
     const user = await userModel.create(payload);
-    const token = await signJWT({ id: user?._id }, '1h');
+    const token = await signJWT({ id: user?._id, role: user?.role }, '1h');
     await registrationMail({
       name: user?.name,
       email: payload?.email,
@@ -63,7 +63,7 @@ export const login = async (req, res) => {
     const payload = req.body;
     const user = await userModel.find(
       { email: { $eq: payload?.email } },
-      { password: 1, is_active: 1 }
+      { password: 1, is_active: 1, role: 1 }
     );
     if (user.length <= 0) {
       return res
@@ -75,7 +75,7 @@ export const login = async (req, res) => {
     }
     const isValid = await verifyPassword(payload?.password, user?.[0].password);
     if (isValid) {
-      const token = await signJWT({ id: user?.[0]?._id });
+      const token = await signJWT({ id: user?.[0]?._id, role: user?.[0]?.role });
       res.status(200).send({ success: true, token, msg: 'success' });
     } else {
       res.status(404).send({ success: false, msg: 'Email id or password is not valid' });

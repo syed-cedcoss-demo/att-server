@@ -5,11 +5,11 @@ import {
 } from '../validations/fieldsValidation.js';
 
 export const signupValidate = (req, res, next) => {
-  const { email, password, username } = req.body;
-  if (!email || !password || !username) {
+  const { email, password, username, role } = req.body;
+  if (!email || !password || !username || !role) {
     return res.status(406).send({
       success: false,
-      msg: 'email, password and username are required'
+      msg: 'email, password, role and username are required'
     });
   }
   const isEmailValid = emailValidation(email);
@@ -33,6 +33,7 @@ export const signupValidate = (req, res, next) => {
       msg: isValidUsername.msg
     });
   }
+
   next();
 };
 
