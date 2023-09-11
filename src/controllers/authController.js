@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
     const otp = await genFourDigitOTP();
     payload = { ...payload, password: hashPass, otp };
     const user = await userModel.create(payload);
-    const token = await signJWT({ id: user?._id, role: user?.role }, '1h');
+    const token = await signJWT({ id: user?._id, role: user?.role }, 60 * 60 * 30);
     await registrationMail({
       name: user?.name,
       email: payload?.email,
