@@ -11,11 +11,11 @@ const cron = () => {
   };
 
   try {
-    // run every 5 minutes only on first instance nodejs cluster
+    // RUN EVERY 10 MINUTES.
     if (process.env.NODE_APP_INSTANCE === 0) {
       setInterval(() => {
         otpReset();
-      }, 1000 * 60 * 5);
+      }, 1000 * 60 * 10);
     }
   } catch (error) {
     console.log(chalk.bgRed.bold(error.message));
