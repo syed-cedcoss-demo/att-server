@@ -39,7 +39,7 @@ export const passwordValidation = (password) => {
   } else {
     return {
       success: true,
-      msg: 'sucess'
+      msg: 'success'
     };
   }
 };
