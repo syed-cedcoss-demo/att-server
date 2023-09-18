@@ -1,6 +1,24 @@
 {
   "recommendations": [
+    "amazonwebservices.aws-toolkit-vscode",
+    "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
+    "DigitalBrainstem.javascript-ejs-support",
+    "dsznajder.es7-react-js-snippets",
+    "dzhavat.bracket-pair-toggler",
+    "eamodio.gitlens",
     "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "GitHub.github-vscode-theme",
+    "PKief.material-icon-theme",
+    "ritwickdey.LiveServer",
+    "rvest.vs-code-prettier-eslint",
+    "SimonSiefke.svg-preview",
+    "SonarSource.sonarlint-vscode",
+    "steoates.autoimport",
+    "streetsidesoftware.code-spell-checker",
+    "wix.vscode-import-cost",
+    "yoavbls.pretty-ts-errors"
   ]
 }

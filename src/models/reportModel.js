@@ -2,7 +2,7 @@ import { model, Schema } from 'mongoose';
 
 const reportSchema = new Schema(
   {
-    name: {
+    user_id: {
       type: Schema.Types.ObjectId,
       ref: 'users',
       required: true
