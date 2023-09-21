@@ -4,6 +4,7 @@ import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import { serverStatus } from '../public/templates/static-ui.js';
 import security from './config/security.js';
 import authRoute from './routes/authRoute.js';
 import userRoute from './routes/userRoute.js';
@@ -30,7 +31,7 @@ const cedAttApp = (app) => {
   app.use('/logs', express.static(basePath + '/public/logs'));
 
   // APP ROUTES
-  app.get('/', (req, res) => res.status(200).send('<h2>Server is running...</h2>'));
+  app.get('/', (req, res) => res.status(200).send(serverStatus()));
   app.use('/auth', authRoute);
   app.use('/user', userRoute);
 

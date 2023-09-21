@@ -39,7 +39,7 @@ const server = httpServer.listen(port, () => {
   console.log('----------------------------------------------');
   console.log(chalk.green.bold(`server is up and running on post ${port}`));
   console.log(chalk.blue.bold('Note:'), `Server is running on ${process.env.NODE_ENV} mode`);
-  console.log('start server in production mode, add/replace NODE_ENV=production');
+  console.log('start server in production mode for better performance');
   console.log('----------------------------------------------');
 });
 
