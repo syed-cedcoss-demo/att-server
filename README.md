@@ -22,7 +22,7 @@ Real-time updates are a critical aspect of e-commerce operations. The integratio
 
 ### Dependencies
 
-- axios
+- helmet
 - bcryptjs
 - cors
 - mongoose
@@ -35,7 +35,7 @@ Real-time updates are a critical aspect of e-commerce operations. The integratio
 ### Getting Started
 
 - clone the project
-- go to project root folder & do npm i or yarn add
+- go to project root folder & do npm i
 
 ### Executing program
 
@@ -60,8 +60,8 @@ NODE_ENV = development;
 PORT = '';
 MONGO_URI = '';
 APP_JWT_SECRET = '';
-EMAIL_ID = '';
-EMAIL_PASS = ''; //note: email must be outlook.com mail.
+EMAIL_ID = ''; //note: email must be outlook.com mail.
+EMAIL_PASS = '';
 SERVER_URL = '';
 APP_URL = '';
 
